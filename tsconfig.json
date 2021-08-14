@@ -1,0 +1,50 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@sc/shared": [
+        "app/shared"
+      ],
+      "@sc/core": [
+        "app/core"
+      ],
+      "@sc/jobs": [
+        "app/jobs"
+      ],
+      "@sc/companies": [
+        "app/companies"
+      ],
+      "@sc/salary": [
+        "app/salary"
+      ],
+      "@sc/feed": [
+        "app/feed"
+      ],
+      "@sc/account": [
+        "app/account"
+      ],
+      "@sc/auth": [
+        "app/auth"
+      ]
+    },
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "resolveJsonModule": true
+  }
+}

@@ -1,0 +1,32 @@
+<div class="container">
+    <h4 class="card-title pb-3">Login</h4>
+
+    <ngb-alert *ngIf="errorMessage" type="danger" (close)="errorMessage = null">
+        {{ errorMessage }}
+    </ngb-alert>
+
+    <form #form="ngForm" (ngSubmit)="onLogin(form)">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input ngModel #email="ngModel" required email type="email" name="email" id="email" class="form-control"
+                [ngClass]="{ 'is-invalid': email.invalid && form.submitted }">
+            <div class="invalid-feedback">A valid email address is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input ngModel required #password="ngModel" type="password" name="password" id="password" minlength="8"
+                class="form-control" [ngClass]="{ 'is-invalid': password.invalid && form.submitted }">
+            <div *ngIf="password.errors?.required" class="invalid-feedback">
+                Password is required.
+            </div>
+            <div *ngIf="password.errors?.minlength && !password.errors?.required" class="invalid-feedback">
+                Password must contain at least 8 characters.
+            </div>
+        </div>
+
+        <sc-loading-button btnClass="btn btn-block btn-primary" btnType="submit" [isSpinning]="isProcessing">
+            Login
+        </sc-loading-button>
+    </form>
+</div>

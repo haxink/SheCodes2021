@@ -1,0 +1,12 @@
+.sc-radio-container {
+    cursor: pointer;
+    display: inline-block;
+
+    label {
+        width: 100%;
+        height: 100%;
+    }
+    &.bg-grey {
+        background-color: #434343;
+    }
+}

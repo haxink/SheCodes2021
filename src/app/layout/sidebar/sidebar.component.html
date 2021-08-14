@@ -1,0 +1,16 @@
+<nav class="d-none d-md-block col-md-2 bg-dark sidebar shadow-sm">
+  <div class="sidebar-sticky">
+    <ul class="nav flex-column">
+      <li *ngFor="let menuItem of sideMenu" class="nav-item">
+        <a class="nav-link py-3" [routerLink]="menuItem.route" routerLinkActive="active">
+          {{ menuItem.title }}
+          <small>
+            <span *ngIf="menuItem.options?.future" class="badge">
+              coming soon
+            </span>
+          </small>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,8 @@
+<div *ngFor="let option of options" class="sc-radio-container {{option.class || ''}}"
+    [ngClass]="{ 'sc-radio-button-selected': option.value === selectedValue }">
+    <label>
+        <input type="radio" hidden name="radioButton" [disabled]="disabled" value="{{ option.value }}"
+            [(ngModel)]="selectedValue" (change)="onChange()">
+        {{ option.text }}
+    </label>
+</div>

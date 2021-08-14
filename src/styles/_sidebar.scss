@@ -1,0 +1,46 @@
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 75px 0 0; /* Height of navbar */
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.sidebar .nav-link {
+  color: rgba(255, 255, 255, 0.32);
+  font-size: 1.2rem;
+  border-left: 4px solid $dark;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  color: rgba(255, 255, 255, 0.64);
+  background-color: lighten($color: $dark, $amount: 2);
+  box-shadow: inset 1px 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-left: 4px solid $secondary;
+}
+
+.sidebar .nav-link.active {
+  border-left: 4px solid $primary;
+}
