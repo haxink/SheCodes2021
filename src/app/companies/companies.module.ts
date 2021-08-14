@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@sc/shared';
 import { CompaniesListComponent } from './companies-list/companies-list.component';
 import { CompaniesRoutingModule } from './companies-routing.module';
+import { CompaniesService } from './companies.service';
 import { CompanyDetailsComponent } from './company-details/company-details.component';
 
 @NgModule({
@@ -17,7 +18,9 @@ import { CompanyDetailsComponent } from './company-details/company-details.compo
         SharedModule,
         CompaniesRoutingModule,
     ],
-    providers: []
+    providers: [
+        CompaniesService,
+    ]
 })
 // tslint:disable-next-line: no-unnecessary-class
 export class CompaniesModule { }
